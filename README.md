@@ -23,11 +23,10 @@ import org.apache.spark.mllib.feature._
 
 // Data must be cached in order to improve the performance
 
-val mr_dis_model = new DemoIS(k,  // number of neighbors
-                              partitions) // number of partitions
-                              .instSelection(trainingData) // RDD[LabeledPoint]
+val mr_dis = new DemoIS(k,  // number of neighbors
+                        partitions) // number of partitions
+                        .instSelection(trainingData) // RDD[LabeledPoint]
 
-val mr_dis = mr_dis_model.runFilter()
 ```
 
 ## Example (SSMASFLSDE_MR)
@@ -40,7 +39,7 @@ import org.apache.spark.mllib.feature._
 
 val ssmasflsde_mr_model = new SSMASFLSDE_MR(trainingData) // RDD[LabeledPoint]
 
-val ssmasflsde_mr = ssmasflsde_mr_model.runFilter()
+val ssmasflsde_mr = ssmasflsde_mr_model.runPR()
 ```
 
 ## Example (RMHC_MR)
@@ -56,5 +55,5 @@ val rmhc_mr_model = new RMHC_MR(trainingData, // RDD[LabeledPoint]
                               iterations, // Number of iterations
                               seed)
 
-val rmhc_mr = rmhc_mr_model.runFilter()
+val rmhc_mr = rmhc_mr_model.runPR()
 ```
