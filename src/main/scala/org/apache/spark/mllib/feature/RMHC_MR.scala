@@ -7,7 +7,7 @@ import org.apache.spark.rdd.RDD
 
 class RMHC_MR(val data: RDD[LabeledPoint], val m: Double, val p: Int, val k: Int, val seed: Int) extends Serializable {
 
-  def runFilter(): RDD[LabeledPoint] = {
+  def runPR(): RDD[LabeledPoint] = {
 
     val size = data.count()
     var S = data.sample(withReplacement = false, m, seed)

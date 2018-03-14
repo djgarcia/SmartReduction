@@ -3,7 +3,7 @@ package org.apache.spark.mllib.feature
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
-class SSMASFLSDE_MR(val data: RDD[LabeledPoint], val header: String) extends Serializable {
+class SSMASFLSDE_MR(val data: RDD[LabeledPoint]) extends Serializable {
 
   def runPR(): RDD[LabeledPoint] = {
 
