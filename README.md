@@ -13,7 +13,7 @@ import org.apache.spark.mllib.feature._
 val fcnn_mr_model = new FCNN_MR(trainingData, // RDD[LabeledPoint]
                               k) // number of neighbors
 
-val fcnn_mr = fcnn_mr_model.runFilter()
+val fcnn_mr = fcnn_mr_model.runPR()
 ```
 ## Example (MR_DIS)
 
