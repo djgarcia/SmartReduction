@@ -53,6 +53,7 @@ import org.apache.spark.mllib.feature._
 val rmhc_mr_model = new RMHC_MR(trainingData, // RDD[LabeledPoint]
                               p, // Percentage of instances (max 1.0)
                               iterations, // Number of iterations
+                              k, // number of neighbors
                               seed)
 
 val rmhc_mr = rmhc_mr_model.runPR()
